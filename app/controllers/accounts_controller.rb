@@ -1,8 +1,8 @@
 class AccountsController < ApplicationController
     
     def signup
-        sign_up_form = SignUpForm.new
-        render json: sign_up_form.submit(User.new(user_params), Company.new(company_parms))
+        Auth::SignUpService.call(Company.new(company_parms), User.new(user_params))
+        head :ok
     end
 
     private

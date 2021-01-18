@@ -7,4 +7,16 @@ en:
       company: 
         one: Company
         other: Companies
+  errors:
+    base_error:
+      title: Unexpected error
+      detail: Please report this error so we can investigate the cause
+    invalid_model_error:
+      title: "%{model} is invalid"
+    not_found_error:
+      title: Record not Found
+      detail: We could not find the object you were looking for
+    parameter_missing_error:
+      title: Required parameter is missing or empty
+
 
