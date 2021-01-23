@@ -8,6 +8,9 @@ en:
         one: Company
         other: Companies
   errors:
+    auth/log_in_failed_error:
+      title: Log in failed
+      detail: Username or password are incorrect
     base_error:
       title: Unexpected error
       detail: Please report this error so we can investigate the cause
