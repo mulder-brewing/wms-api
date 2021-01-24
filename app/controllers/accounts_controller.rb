@@ -5,8 +5,8 @@ class AccountsController < ApplicationController
         head :ok
     end
 
-    def login
-        render json: Auth::LogInService.call(params[:username], params[:password])
+    def signin
+        render json: Auth::SignInService.call(params[:username], params[:password])
     end
 
     private

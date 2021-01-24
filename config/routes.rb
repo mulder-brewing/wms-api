@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
   post "/signup", to: "accounts#signup"
-  post "/login", to: "accounts#login"
+  post "/signin", to: "accounts#signin"
 end

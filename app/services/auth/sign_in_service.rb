@@ -1,4 +1,4 @@
-class Auth::LogInService < ApplicationService
+class Auth::SignInService < ApplicationService
     attr_reader :username, :password
 
     def initialize(username, password)
@@ -12,12 +12,11 @@ class Auth::LogInService < ApplicationService
             if user && user.authenticate(@password)
                 payload = {}
                 payload["user_id"] = user.id
-                expiration = Rails.application.credentials.jwt[:expiration].to_i.hours.from_now.to_i
-                payload["exp"] = expiration
+                payload["exp"] = Rails.application.credentials.jwt[:expiration].to_i.hours.from_now.to_i
                 token = JWT.encode(payload, Rails.application.credentials.jwt[:secret_key])
                 return { 
                     token: token,
-                    expiration: expiration 
+                    user: user
                 }
             else
                 raise StandardError.new "Failed to login"
