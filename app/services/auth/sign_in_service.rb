@@ -15,8 +15,7 @@ class Auth::SignInService < ApplicationService
                 payload["exp"] = Rails.application.credentials.jwt[:expiration].to_i.hours.from_now.to_i
                 token = JWT.encode(payload, Rails.application.credentials.jwt[:secret_key])
                 return { 
-                    token: token,
-                    user: user
+                    token: token
                 }
             else
                 raise StandardError.new "Failed to login"

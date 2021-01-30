@@ -1,11 +1,11 @@
-class AccountsController < ApplicationController
+class Auth::AccountsController < ApplicationController
     
-    def signup
+    def sign_up
         Auth::SignUpService.call(Company.new(company_parms), User.new(user_params))
         head :ok
     end
 
-    def signin
+    def sign_in
         render json: Auth::SignInService.call(params[:username], params[:password])
     end
 
