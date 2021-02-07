@@ -1,7 +1,7 @@
 class Auth::AccountsController < ApplicationController
     
     def sign_up
-        Auth::SignUpService.call(Company.new(company_parms), User.new(user_params))
+        Auth::SignUpService.call(Company.new(company_parms), User.new(user_params), params[:email])
         head :ok
     end
 
