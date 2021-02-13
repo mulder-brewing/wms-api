@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'from@example.com'
+  default from: 'Mulder WMS <no-reply@mulderwms.net>'
   layout 'mailer'
 end

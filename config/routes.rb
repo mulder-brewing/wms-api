@@ -4,6 +4,7 @@ Rails.application.routes.draw do
         controller :accounts do
             post :sign_up
             post :sign_in
+            post :confirm_email
         end
 
         controller :jwt do

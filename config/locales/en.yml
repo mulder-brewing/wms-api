@@ -7,7 +7,16 @@ en:
       company: 
         one: Company
         other: Companies
+  mailer:
+    accounts:
+      validate_token: The token to validate your email is %{token}
   errors:
+    auth/email_confirmation_failed_error:
+      title: Email confirmation failed
+      detail: Token is invalid
+    auth/email_not_confirmed_error:
+      title: Email is not confirmed
+      detail: Check your email for a token
     auth/log_in_failed_error:
       title: Log in failed
       detail: Username or password are incorrect

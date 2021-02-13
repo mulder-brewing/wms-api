@@ -9,6 +9,11 @@ class Auth::AccountsController < ApplicationController
         render json: Auth::SignInService.call(params[:username], params[:password])
     end
 
+    def confirm_email
+        Auth::ConfirmEmailService.call(params[:token])
+        head :ok
+    end
+
     private
 
     def company_parms
