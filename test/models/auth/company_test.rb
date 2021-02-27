@@ -1,6 +1,6 @@
 require "test_helper"
 
-class UserEmailConfirmationTest < ActiveSupport::TestCase
+class Auth::CompanyTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

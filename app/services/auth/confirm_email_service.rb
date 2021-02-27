@@ -8,7 +8,7 @@ class Auth::ConfirmEmailService < TransactionService
     def call
         begin
             # Lookup the email confirmation by the token
-            email_confirmation = UserEmailConfirmation.find_by(token: token)
+            email_confirmation = Auth::UserEmailConfirmation.find_by(token: token)
 
             if email_confirmation == nil
                 raise StandardError.new "Failed to find email confirmation with token"

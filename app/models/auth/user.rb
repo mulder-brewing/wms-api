@@ -1,6 +1,6 @@
-class User < ApplicationRecord
+class Auth::User < ApplicationRecord
     has_secure_password
-  
+
     belongs_to :company
     has_one :user_email_confirmation, dependent: :destroy
 

@@ -1,12 +1,15 @@
 en:
   activerecord:
     models:
-      user:
-        one: User
-        other: Users
-      company: 
+      auth/company:
         one: Company
         other: Companies
+      auth/user:
+        one: User
+        other: Users
+      auth/user_email_confirmation:
+        one: Email Confirmation
+        other: Email Confirmations
   mailer:
     accounts:
       validate_token: The token to validate your email is %{token}
@@ -36,5 +39,3 @@ en:
     routing_error:
       title: Routing Error
       detail: "Route does not exist %{path}"
-
-

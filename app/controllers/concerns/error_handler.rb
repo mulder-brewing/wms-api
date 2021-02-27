@@ -14,6 +14,7 @@ module ErrorHandler
     private
 
     def handle_error(e)
+        puts e.inspect
         mapped = map_error(e)
         # notify about unexpected_error unless mapped
         mapped ||= BaseError.new
@@ -30,5 +31,5 @@ module ErrorHandler
     def render_error(error)
         render json: error, status: error.status
     end
-    
+
 end

@@ -8,7 +8,7 @@ class Auth::SignInService < ApplicationService
 
     def call
         begin
-            user = User.find_by(username: username)
+            user = Auth::User.find_by(username: username)
             if user && user.authenticate(password)
                 # Check if email has been confirmed
                 if user.email.blank?
@@ -21,7 +21,7 @@ class Auth::SignInService < ApplicationService
                 payload["user_id"] = user.id
                 payload["exp"] = Rails.application.credentials.jwt[:expiration].to_i.hours.from_now.to_i
                 token = JWT.encode(payload, Rails.application.credentials.jwt[:secret_key])
-                return { 
+                return {
                     token: token
                 }
             else
